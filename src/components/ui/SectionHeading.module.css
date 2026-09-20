@@ -1,0 +1,48 @@
+.wrapper {
+  margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.alignCenter {
+  text-align: center;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alignLeft {
+  text-align: left;
+  max-width: 760px;
+}
+
+.badge {
+  margin-bottom: 1.25rem;
+}
+
+.badgeIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyan-400);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.1rem;
+}
+
+.description {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    margin-bottom: 2.5rem;
+  }
+}

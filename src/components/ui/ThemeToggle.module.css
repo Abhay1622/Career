@@ -1,0 +1,87 @@
+.toggleButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-clay-badge);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.toggleButton:hover {
+  border-color: var(--border-focus);
+  transform: translateY(-1px);
+}
+
+.iconContainer {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sunIcon,
+.moonIcon {
+  position: absolute;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+
+.isDark .sunIcon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.6);
+}
+
+.isDark .moonIcon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+  color: var(--cyan-400);
+}
+
+.isLight .sunIcon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+  color: var(--amber-500);
+}
+
+.isLight .moonIcon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+}
+
+.toggleTrack {
+  width: 32px;
+  height: 18px;
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: var(--radius-full);
+  position: relative;
+  transition: background-color var(--transition-fast);
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color var(--transition-fast);
+}
+
+.thumbDark {
+  left: 2px;
+  transform: translateX(14px);
+  background: var(--cyan-400);
+  box-shadow: 0 0 8px var(--cyan-400);
+}
+
+.thumbLight {
+  left: 2px;
+  transform: translateX(0);
+  background: var(--amber-500);
+  box-shadow: 0 0 8px var(--amber-500);
+}

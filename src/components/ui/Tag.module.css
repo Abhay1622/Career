@@ -1,0 +1,89 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(8px);
+}
+
+.sizeSm {
+  padding: 0.28rem 0.75rem;
+  font-size: 0.775rem;
+}
+
+.sizeMd {
+  padding: 0.4rem 0.95rem;
+  font-size: 0.825rem;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Color Variants */
+.cyan {
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  color: var(--text-primary);
+}
+.cyan .dot {
+  background: var(--cyan-400);
+  box-shadow: 0 0 6px var(--cyan-400);
+}
+.cyan:hover {
+  background: rgba(56, 189, 248, 0.14);
+  border-color: rgba(56, 189, 248, 0.45);
+}
+
+.emerald {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  color: var(--text-primary);
+}
+.emerald .dot {
+  background: var(--emerald-400);
+  box-shadow: 0 0 6px var(--emerald-400);
+}
+.emerald:hover {
+  background: rgba(16, 185, 129, 0.14);
+  border-color: rgba(16, 185, 129, 0.45);
+}
+
+.indigo {
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  color: var(--text-primary);
+}
+.indigo .dot {
+  background: var(--indigo-400);
+  box-shadow: 0 0 6px var(--indigo-400);
+}
+.indigo:hover {
+  background: rgba(99, 102, 241, 0.14);
+  border-color: rgba(99, 102, 241, 0.45);
+}
+
+.amber {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  color: var(--text-primary);
+}
+.amber .dot {
+  background: var(--amber-400);
+  box-shadow: 0 0 6px var(--amber-400);
+}
+
+.neutral {
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: var(--text-secondary);
+}
+.neutral .dot {
+  background: var(--text-muted);
+}

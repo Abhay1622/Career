@@ -1,0 +1,176 @@
+.aboutBentoGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.bentoCard {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .bentoCard {
+    padding: 1.5rem;
+  }
+}
+
+/* Card Sizes across 12-column grid */
+.cardExpertise {
+  grid-column: span 12;
+  background: linear-gradient(135deg, rgba(13, 20, 36, 0.75), rgba(11, 25, 44, 0.65));
+}
+
+[data-theme="light"] .cardExpertise {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 249, 255, 0.85));
+}
+
+.cardTech {
+  grid-column: span 4;
+}
+
+.cardContent {
+  grid-column: span 4;
+}
+
+.cardOffPage {
+  grid-column: span 4;
+}
+
+@media (max-width: 1024px) {
+  .cardTech,
+  .cardContent {
+    grid-column: span 6;
+  }
+  .cardOffPage {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardTech,
+  .cardContent,
+  .cardOffPage {
+    grid-column: span 12;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.cardIconWrapCyan,
+.cardIconWrapEmerald,
+.cardIconWrapIndigo,
+.cardIconWrapAmber {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-clay-badge);
+}
+
+.cardIconWrapCyan {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+.iconCyan {
+  color: var(--cyan-400);
+}
+
+.cardIconWrapEmerald {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.iconEmerald {
+  color: var(--emerald-400);
+}
+
+.cardIconWrapIndigo {
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+.iconIndigo {
+  color: var(--indigo-400);
+}
+
+.cardIconWrapAmber {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+.iconAmber {
+  color: var(--amber-400);
+}
+
+.cardPillarTag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+  color: var(--text-primary);
+}
+
+.cardText {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.cardHighlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.iconCheck {
+  color: var(--emerald-400);
+  flex-shrink: 0;
+}
+
+.placeholderHighlight {
+  color: var(--cyan-400);
+  font-weight: 600;
+}
+
+.pillBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.specBadge {
+  font-size: 0.775rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-weight: 500;
+}

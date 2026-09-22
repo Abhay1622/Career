@@ -34,21 +34,21 @@ export const metadata: Metadata = {
     'Keyword Research',
     'Organic Growth Portfolio',
   ],
-  authors: [{ name: 'SEO Analyst' }],
-  creator: 'SEO Analyst',
+  authors: [{ name: 'Fiza Shaikh' }],
+  creator: 'Fiza Shaikh',
   openGraph: {
-    title: 'SEO Analyst Portfolio | Organic Growth & Search Architecture',
+    title: 'Fiza Shaikh | SEO Analyst & Organic Growth Strategist',
     description:
-      'Verified SEO case studies: 10x traffic scale post-penalty, Top 2 & Position 1 software rankings, and programmatic multi-city local pages.',
+      'Verified SEO case studies: 10x traffic scale post-penalty, #1 ranking in competitive software sectors, and programmatic multi-city local pages.',
     type: 'website',
     locale: 'en_US',
-    siteName: 'SEO Analyst Portfolio',
+    siteName: 'Fiza Shaikh — SEO Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Analyst Portfolio | Organic Growth & Search Architecture',
+    title: 'Fiza Shaikh | SEO Analyst & Organic Growth Strategist',
     description:
-      'Verified SEO case studies: 10x traffic scale post-penalty, Top 2 & Position 1 software rankings, and programmatic multi-city local pages.',
+      'Verified SEO case studies: 10x traffic scale post-penalty, #1 ranking in competitive software sectors, and programmatic multi-city local pages.',
   },
   robots: {
     index: true,
@@ -71,7 +71,7 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'SEO Analyst',
+    name: 'Fiza Shaikh',
     jobTitle: 'SEO Analyst & Organic Growth Strategist',
     knowsAbout: [
       'Search Engine Optimization',

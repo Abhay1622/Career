@@ -6,6 +6,25 @@
   flex-wrap: wrap;
 }
 
+@media (max-width: 640px) {
+  .tabsTrack {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .tabsTrack::-webkit-scrollbar {
+    display: none;
+  }
+  .tabBtn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
 .tabBtn {
   padding: 0.45rem 1.15rem;
   border-radius: var(--radius-full);

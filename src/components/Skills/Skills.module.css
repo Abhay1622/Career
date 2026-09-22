@@ -18,6 +18,28 @@
   justify-content: center;
 }
 
+@media (max-width: 640px) {
+  .filterContainer {
+    justify-content: flex-start;
+  }
+  .filterTrack {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .filterTrack::-webkit-scrollbar {
+    display: none;
+  }
+  .filterBtn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
 .filterBtn {
   padding: 0.4rem 0.95rem;
   border-radius: var(--radius-full);

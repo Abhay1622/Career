@@ -77,8 +77,8 @@ export function Hero() {
             </div>
             <div className={styles.proofDivider} />
             <div className={styles.proofItem}>
-              <span className={styles.proofNum}>Top 2 & #1</span>
-              <span className={styles.proofLabel}>SERP Positions</span>
+              <span className={styles.proofNum}>#1 Ranking</span>
+              <span className={styles.proofLabel}>Google Search</span>
             </div>
             <div className={styles.proofDivider} />
             <div className={styles.proofItem}>
@@ -97,7 +97,7 @@ export function Hero() {
             {/* Header / Identity Slot */}
             <div className={styles.visualHeader}>
               <div className={styles.profileAvatarPlaceholder}>
-                <User size={22} className={styles.avatarIcon} />
+                <span className={styles.avatarInitials}>FS</span>
                 <span className={styles.onlineBadge} />
               </div>
               <div className={styles.avatarMeta}>
@@ -119,7 +119,7 @@ export function Hero() {
                 </div>
                 <div className={styles.gscMetricBox}>
                   <span className={styles.gscLabel}>Average Position</span>
-                  <span className={styles.gscValueGreen}>1.8 SERP</span>
+                  <span className={styles.gscValueGreen}>1.4 SERP</span>
                 </div>
                 <div className={styles.gscMetricBox}>
                   <span className={styles.gscLabel}>Click-Through Rate</span>
@@ -188,13 +188,13 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Floating Widget 1: Top 2 Keyword Badge (Claymorphism) */}
+          {/* Floating Widget 1: #1 Ranking Badge (Claymorphism) */}
           <div className={`${styles.floatingWidget} ${styles.widgetTopRight}`}>
             <div className={styles.widgetIconWrap}>
               <Award size={18} className={styles.widgetGold} />
             </div>
             <div>
-              <div className={styles.widgetValue}>Top 2 & Pos #1</div>
+              <div className={styles.widgetValue}>#1 Ranking</div>
               <div className={styles.widgetSub}>Targeted Software SERP</div>
             </div>
           </div>

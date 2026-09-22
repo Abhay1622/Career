@@ -48,6 +48,11 @@ export interface Project {
   evidencePlaceholder?: {
     type: 'Search Console' | 'Analytics' | 'Keyword Tracker' | 'Audit Report';
     description: string;
+    targetQuery?: string;
+    verifiedRank?: string;
+    searchEngine?: string;
+    volume?: string;
+    ctr?: string;
   };
 }
 

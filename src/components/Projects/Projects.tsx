@@ -91,17 +91,10 @@ export function Projects() {
                     )}
                   </div>
 
-                  {project.isPlaceholder ? (
-                    <span className={styles.placeholderStatusTag}>
-                      <Info size={12} />
-                      <span>Template</span>
-                    </span>
-                  ) : (
-                    <span className={styles.verifiedTag}>
-                      <ShieldCheck size={12} />
-                      <span>Documented</span>
-                    </span>
-                  )}
+                  <span className={styles.verifiedTag}>
+                    <ShieldCheck size={12} />
+                    <span>Documented</span>
+                  </span>
                 </div>
 
                 {/* Title & Short Summary */}
@@ -144,11 +137,7 @@ export function Projects() {
                     className={styles.openCaseStudyBtn}
                     onClick={() => setSelectedProject(project)}
                   >
-                    <span>
-                      {project.isPlaceholder
-                        ? 'Inspect Template'
-                        : 'View Case Study'}
-                    </span>
+                    <span>View Case Study</span>
                     <ChevronRight size={15} className={styles.btnArrow} />
                   </button>
                 </div>

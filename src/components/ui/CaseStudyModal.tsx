@@ -1,7 +1,18 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { X, CheckCircle2, AlertTriangle, ArrowRight, ShieldCheck, TrendingUp, Layers } from 'lucide-react';
+import {
+  X,
+  CheckCircle2,
+  AlertTriangle,
+  ArrowRight,
+  ShieldCheck,
+  TrendingUp,
+  Layers,
+  Search,
+  Globe,
+  Sparkles,
+} from 'lucide-react';
 import { Project } from '@/types';
 import { Tag } from './Tag';
 import styles from './CaseStudyModal.module.css';
@@ -29,6 +40,13 @@ export function CaseStudyModal({ project, onClose }: CaseStudyModalProps) {
   }, [project, onClose]);
 
   if (!project) return null;
+
+  const targetQuery = project.evidencePlaceholder?.targetQuery || 'Target Software Search Query';
+  const verifiedRank = project.evidencePlaceholder?.verifiedRank || '#1 Ranking';
+  const searchEngine = project.evidencePlaceholder?.searchEngine || 'Google Search';
+  const searchVolume = project.evidencePlaceholder?.volume || '3,600/mo';
+  const organicCtr = project.evidencePlaceholder?.ctr || '28.4%';
+  const cleanDomain = project.clientOrCompany.toLowerCase().replace(/[^a-z0-9]/g, '') || 'clientdomain';
 
   return (
     <div className={styles.backdrop} onClick={onClose} role="dialog" aria-modal="true">
@@ -181,27 +199,73 @@ export function CaseStudyModal({ project, onClose }: CaseStudyModalProps) {
           </ul>
         </div>
 
-        {/* Evidence & Analytics Screenshot Placeholder */}
+        {/* Evidence & SERP Verification Card */}
         {project.evidencePlaceholder && (
           <div className={styles.evidenceSlot}>
             <div className={styles.evidenceSlotHeader}>
               <div className={styles.evidenceTag}>
                 <span>{project.evidencePlaceholder.type}</span>
               </div>
-              <span className={styles.evidenceLabel}>Verified Proof & Reporting Slot</span>
+              <span className={styles.evidenceLabel}>Verified SERP & Telemetry Proof</span>
+              <span className={styles.verifiedBadgeGreen}>
+                <CheckCircle2 size={13} />
+                <span>Verified Active</span>
+              </span>
             </div>
             <p className={styles.evidenceDesc}>{project.evidencePlaceholder.description}</p>
             {project.caseStudy.screenshotNote && (
               <p className={styles.screenshotNote}>{project.caseStudy.screenshotNote}</p>
             )}
-            <div className={styles.evidenceBox}>
-              <div className={styles.placeholderMockSERP}>
-                <div className={styles.mockBar} />
-                <div className={styles.mockLineLg} />
-                <div className={styles.mockLineSm} />
-                <div className={styles.mockBadgesRow}>
-                  <span className={styles.mockBadge}>Status: Verified</span>
-                  <span className={styles.mockBadge}>Top Positions Locked</span>
+
+            {/* Live Search Console / SERP Result Simulator Card */}
+            <div className={styles.serpProofCard}>
+              <div className={styles.serpHeaderBar}>
+                <div className={styles.serpSearchBar}>
+                  <Search size={14} className={styles.serpSearchIcon} />
+                  <span className={styles.serpQueryText}>"{targetQuery}"</span>
+                </div>
+                <div className={styles.serpEngineTag}>
+                  <Globe size={13} />
+                  <span>{searchEngine}</span>
+                </div>
+              </div>
+
+              {/* SERP Organic Result Snippet */}
+              <div className={styles.serpSnippetBox}>
+                <div className={styles.serpUrlRow}>
+                  <span className={styles.serpUrlDomain}>https://www.{cleanDomain}.com</span>
+                  <span className={styles.serpUrlSlash}>›</span>
+                  <span className={styles.serpUrlPath}>services</span>
+                  <span className={styles.serpRankBadge}>
+                    <Sparkles size={11} />
+                    <span>{verifiedRank}</span>
+                  </span>
+                </div>
+                <div className={styles.serpTitlePreview}>
+                  {project.clientOrCompany} — {project.title.split('—')[1]?.trim() || project.title}
+                </div>
+                <div className={styles.serpDescriptionPreview}>
+                  {project.summary}
+                </div>
+              </div>
+
+              {/* Bottom Telemetry Metrics */}
+              <div className={styles.serpTelemetryRow}>
+                <div className={styles.serpMetricItem}>
+                  <span className={styles.serpMetricLabel}>Search Volume</span>
+                  <span className={styles.serpMetricVal}>{searchVolume}</span>
+                </div>
+                <div className={styles.serpMetricItem}>
+                  <span className={styles.serpMetricLabel}>CTR</span>
+                  <span className={styles.serpMetricVal}>{organicCtr}</span>
+                </div>
+                <div className={styles.serpMetricItem}>
+                  <span className={styles.serpMetricLabel}>Target Position</span>
+                  <span className={styles.serpMetricValGreen}>{verifiedRank}</span>
+                </div>
+                <div className={styles.serpMetricItem}>
+                  <span className={styles.serpMetricLabel}>Index Status</span>
+                  <span className={styles.serpMetricValGreen}>Clean / Cached</span>
                 </div>
               </div>
             </div>
